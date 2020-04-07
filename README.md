@@ -45,7 +45,7 @@ running process the container will be deleted
 ## Create
 Creating a container is often better than out right running it:
 ```
-docker create
+docker create \
        --name=cups \
        --restart=always \
        --net=host \
