@@ -55,7 +55,9 @@ If you want to permanently persist this data, see the `docker create` example
 Docker volumes
 
 + **Notes**: The `Dockerfile` explicitly sets volumes at `/config` and
-`/services`. The necessary configurations done by the `docker container` will be
+`/services` (see
+[these lines](https://github.com/RagingTiger/docker-cups-airprint/blob/2a30b6690a08262fb64375b74f07ab7b3f77ec4a/Dockerfile#L16-L17)).
+ The necessary configurations done by the `docker container` will be
 stored in those directories and will persist even if the container stops. Docker
 will store the contents of these directories (located in the container) in
 `/var/lib/docker/volumes` (see for reference
