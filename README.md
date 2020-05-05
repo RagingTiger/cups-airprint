@@ -13,7 +13,8 @@ Hopefully someone else finds this useful.
 # Multi-arch Image
 The below commands reference a
 [Docker Manifest List](https://docs.docker.com/engine/reference/commandline/manifest/)
-at `tigerj/cups-airprint` built using Docker's
+at [`tigerj/cups-airprint`](https://hub.docker.com/r/tigerj/cups-airprint)
+built using Docker's
 [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/).
 Simply running commands using this image will pull
 the matching image architecture (e.g. `amd64`, `arm32v7`, or `arm64`) based on
