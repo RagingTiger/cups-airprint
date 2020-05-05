@@ -48,9 +48,11 @@ To remove the conainer simply run:
 ```
 $ docker rm cups
 ```
-+ **WARNING**: Be aware that these `docker volumes` will be deleted if you
-delete the container (e.g. `docker rm cups`). If you want to more permanently
-persist this data, see the `docker create` example [below](#create).
+**WARNING**: Be aware that deleting the container (i.e. `cups` in the example)
+will permanently delete the data that `docker volume` is storing for you.
+If you want to permanently persist this data, see the `docker create` example
+[below](#create). Continue reading the *Notes* section for more details about
+Docker volumes
 
 + **Notes**: The `Dockerfile` explicitly sets volumes at `/config` and
 `/services`. The necessary configurations done by the `docker container` will be
@@ -60,7 +62,7 @@ will store the contents of these directories (located in the container) in
 [Docker Volumes](https://docs.docker.com/storage/volumes/)).
 
 ## Create
-Creating a container is often better than out right running it:
+Creating a container is often more desirable than directly running it:
 ```
 $ docker create \
        --name=cups \
