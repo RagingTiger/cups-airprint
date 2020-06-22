@@ -20,7 +20,10 @@ Simply running commands using this image will pull
 the matching image architecture (e.g. `amd64`, `arm32v7`, or `arm64`) based on
 the hosts architecture. Hence, if you are on a **Raspberry Pi** the below
 commands will work the same as if you were on a traditional `amd64`
-desktop/laptop computer.
+desktop/laptop computer.**Note**: Because the image requires `ubuntu` as its base
+image, there is currently no `arm32v6` architecture available. This means if your
+target hardware is a **Raspberry Pi Zero** or similar `arm 6` architecture, this
+image will not run.
 
 # Getting Started
 This section will give an overview of the essential options/arguments to pass
