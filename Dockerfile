@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
 	cups \
 	cups-pdf \
 	hplip \
+	printer-driver-splix \
 	inotify-tools \
 	python-cups \
 && rm -rf /var/lib/apt/lists/*
