@@ -4,9 +4,15 @@ FROM ubuntu:xenial
 RUN apt-get update && apt-get install -y \
 	cups \
 	cups-pdf \
+  	cups-bsd \
+  	cups-filters \
 	hplip \
-	printer-driver-splix \
 	inotify-tools \
+	foomatic-db-compressed-ppds \
+	printer-driver-all \
+	openprinting-ppds \
+	hpijs-ppds \
+	hp-ppd \
 	python-cups \
 && rm -rf /var/lib/apt/lists/*
 
