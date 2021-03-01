@@ -8,6 +8,9 @@
     + [Parameters](#dparams)
 * [Using](#using)
 * [Notes](#notes)
+* [Trouble Shooting](#trouble)
+  + [Missing Printer Driver](#missing-driver)
+  + [Driver Version](#driver-version)
 
 
 # <a name="about"></a> [About](#toc)
@@ -145,3 +148,30 @@ though they're live in CUPS. Therefore it will take a few moments before the
 services files update
 * Don't stop the container immediately if you intend to have a persistent
 configuration for this same reason
+
+## <a name="trouble"></a> [Trouble Shooting](#toc)
+Here we are going to discuss the most **common problems** that users have when
+trying to setup and configure their printer to work with the
+**tigerj/cups-airprint** image.
+
+### <a name="missing-driver"></a> [Missing Printer Driver](#toc)
+As you might imagine this is **the most common** problem users have when setting
+up their printers. While the **tigerj/cups-airprint** image possesses
+**multiple printer drivers**, it most likely **does not** have every driver for
+every printer. This issue can be resolved as follows:
+
++ Figure out what printer driver you need, open an issue about missing driver,
+  necessary package containing said driver will be added to **Dockerfile**.
+
+### <a name="driver-version"></a> [Driver Version](#toc)
+Sometimes the right printer driver is installed in the **tigerj/cups-airprint**
+Docker image, but the **version** is not current. This issue may require one of
+two choices to resolve:
+
++ Download the **docker-cups-airprint** git repo and build a fresh image
+  + This will pull the most recent versions of the printer driver from the package
+    manager.
+
++ Download driver **DIRECTLY** from the manufacturer and add it to the image
+  + If building a fresh image does not update the version of the driver, then
+    you will need the most recent printer driver from the manufacturer.
