@@ -1,8 +1,20 @@
-# About
+# <a name="toc"></a> Table of Contents
+* [About](#about)
+* [Intro](#intro)
+* [Multi-arch Image](#multi-arch)
+* [Getting Started](#start)
+  + [Docker Run](#drun)
+  + [Docker Create](#dcreate)
+    + [Parameters](#dparams)
+* [Using](#using)
+* [Notes](#notes)
+
+
+# <a name="about"></a> [About](#toc)
 Modified copy of source code at:
 https://github.com/quadportnick/docker-cups-airprint
 
-# Intro
+# <a name="intro"></a> [Intro](#toc)
 This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
 relay for printers that are already on the network but not AirPrint capable.
 The local Avahi will be utilized for advertising the printers on the network.
@@ -10,7 +22,7 @@ The local Avahi will be utilized for advertising the printers on the network.
 This is also an excuse to dip my toes into GitHub/Docker more, so why not?
 Hopefully someone else finds this useful.
 
-# Multi-arch Image
+# <a name="multi-arch"></a> [Multi-arch Image](#toc)
 The below commands reference a
 [Docker Manifest List](https://docs.docker.com/engine/reference/commandline/manifest/)
 at [`tigerj/cups-airprint`](https://hub.docker.com/r/tigerj/cups-airprint)
@@ -25,12 +37,12 @@ image, there is currently no `arm32v6` architecture available. This means if you
 target hardware is a **Raspberry Pi Zero** or similar `arm 6` architecture, this
 image will not run.
 
-# Getting Started
+# <a name="start"></a> [Getting Started](#toc)
 This section will give an overview of the essential options/arguments to pass
 to docker to successfully run containers from the `tigerj/cups-airprint` docker
 image.
 
-## Run
+## <a name="drun"></a> [Docker Run](#toc)
 To simply do a quick and dirty run of the cups/airprint container:
 ```
 $ docker run
@@ -67,7 +79,7 @@ will store the contents of these directories (located in the container) in
 `/var/lib/docker/volumes` (see for reference
 [Docker Volumes](https://docs.docker.com/storage/volumes/)).
 
-## Create
+## <a name="dcreate"></a> [Docker Create](#toc)
 Creating a container is often more desirable than directly running it:
 ```
 $ docker create \
@@ -106,7 +118,7 @@ persist. Here we chose to mount the internal `/config` and `/services`
 directories to `~/airprint_data/config` and `~/airprint_data/services`
 respectively, but these could just as well be anywhere on your file system.
 
-### Parameters
+### <a name="dparams"></a> [Parameters](#toc)
 * `--name`: gives the container a name making it easier to work with/on (e.g.
   `cups`)
 * `--restart`: restart policy for how to handle restarts (e.g. `always` restart)
@@ -120,14 +132,14 @@ respectively, but these could just as well be anywhere on your file system.
 * `--device /dev/bus`: device mounted for interacting with USB printers
 * `--device /dev/usb`: device mounted for interacting with USB printers
 
-## Using
+## <a name="using"></a> [Using](#toc)
 CUPS will be configurable at http://localhost:631 using the
 CUPSADMIN/CUPSPASSWORD when you do something administrative.
 
 If the `/services` volume isn't mapping to `/etc/avahi/services` then you will
 have to manually copy the .service files to that path at the command line.
 
-## Notes
+## <a name="notes"></a> [Notes](#toc)
 * CUPS doesn't write out `printers.conf` immediately when making changes even
 though they're live in CUPS. Therefore it will take a few moments before the
 services files update
