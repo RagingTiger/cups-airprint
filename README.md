@@ -145,7 +145,3 @@ though they're live in CUPS. Therefore it will take a few moments before the
 services files update
 * Don't stop the container immediately if you intend to have a persistent
 configuration for this same reason
-
-## ToDo
-* Write common errors section
-* Write CUPS printer setup section 
