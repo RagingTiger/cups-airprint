@@ -22,9 +22,6 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
 relay for printers that are already on the network but not AirPrint capable.
 The local Avahi will be utilized for advertising the printers on the network.
 
-This is also an excuse to dip my toes into GitHub/Docker more, so why not?
-Hopefully someone else finds this useful.
-
 # <a name="multi-arch"></a> [Multi-arch Image](#toc)
 The below commands reference a
 [Docker Manifest List](https://docs.docker.com/engine/reference/commandline/manifest/)
