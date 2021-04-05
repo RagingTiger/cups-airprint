@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:20.04
 
 # Install the packages we need. Avahi will be included
 RUN apt-get update && apt-get install -y \
