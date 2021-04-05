@@ -1,5 +1,8 @@
 FROM ubuntu:20.04
 
+# setting non-interactive front end during installs
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install the packages we need. Avahi will be included
 RUN apt-get update && apt-get install -y \
 	cups \
