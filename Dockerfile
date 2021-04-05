@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 	openprinting-ppds \
 	hpijs-ppds \
 	hp-ppd \
-	python-cups \
+	python3-cups \
 && rm -rf /var/lib/apt/lists/*
 
 # This will use port 631
