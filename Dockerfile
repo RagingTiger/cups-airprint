@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 	hpijs-ppds \
 	hp-ppd \
 	python-cups \
+	cups-backend-bjnp \
 && rm -rf /var/lib/apt/lists/*
 
 # This will use port 631
