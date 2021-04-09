@@ -1,0 +1,3 @@
+[submodule "src/airprint-generate"]
+	path = src/airprint-generate
+	url = https://github.com/tjfontaine/airprint-generate.git
