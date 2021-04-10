@@ -6,6 +6,7 @@
   + [Docker Run](#drun)
   + [Docker Create](#dcreate)
     + [Parameters](#dparams)
+  + [Docker Build](#dbuild)
 * [Using](#using)
 * [Notes](#notes)
 * [Trouble Shooting](#trouble)
@@ -45,7 +46,7 @@ image.
 ## <a name="drun"></a> [Docker Run](#toc)
 To simply do a quick and dirty run of the cups/airprint container:
 ```
-$ docker run
+$ docker run \
        -d \
        --name=cups \
        --net=host \
@@ -131,6 +132,15 @@ respectively, but these could just as well be anywhere on your file system.
 * `-e CUPSPASSWORD`: the password for the CUPS admin user
 * `--device /dev/bus`: device mounted for interacting with USB printers
 * `--device /dev/usb`: device mounted for interacting with USB printers
+
+## <a name="dbuild"></a> [Docker Build](#toc)
+If you would like to build the image yourself (locally), pull down the repo and
+run the `docker build` command as follows:
+```
+$ git clone https://github.com/RagingTiger/docker-cups-airprint
+$ cd docker-cups-airprint
+$ docker build -t tigerj/cups-airprint .
+```
 
 ## <a name="using"></a> [Using](#toc)
 CUPS will be configurable at http://localhost:631 using the
