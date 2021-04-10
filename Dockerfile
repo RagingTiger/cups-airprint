@@ -27,8 +27,8 @@ VOLUME /config
 VOLUME /services
 
 # Add scripts
-ADD src/*.sh /root
-ADD src/*/*.py /root
+ADD src/*.sh /root/
+ADD src/*/*.py /root/
 RUN chmod +x /root/*
 CMD ["/root/run_cups.sh"]
 
