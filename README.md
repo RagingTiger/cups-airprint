@@ -135,9 +135,11 @@ respectively, but these could just as well be anywhere on your file system.
 
 ## <a name="dbuild"></a> [Docker Build](#toc)
 If you would like to build the image yourself (locally), pull down the repo and
-run the `docker build` command as follows:
+run the `docker build` command as follows (NOTE: make sure to clone the repo
+with the `--recurse-submodules` option or build will complain
+`no source files were specified`):
 ```
-$ git clone https://github.com/RagingTiger/docker-cups-airprint
+$ git clone --recurse-submodules https://github.com/RagingTiger/docker-cups-airprint
 $ cd docker-cups-airprint
 $ docker build -t tigerj/cups-airprint .
 ```
