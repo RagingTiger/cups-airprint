@@ -141,6 +141,9 @@ $ git clone https://github.com/RagingTiger/docker-cups-airprint
 $ cd docker-cups-airprint
 $ docker build -t tigerj/cups-airprint .
 ```
+Follow this with a [docker run](#drun) or [docker create](dcreate) to deploy
+your container and your **cups-airprint** server is ready to be configured and
+[used](#using).
 
 ## <a name="using"></a> [Using](#toc)
 CUPS will be configurable at http://localhost:631 using the
