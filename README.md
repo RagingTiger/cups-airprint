@@ -6,6 +6,7 @@
   + [Docker Run](#drun)
   + [Docker Create](#dcreate)
     + [Parameters](#dparams)
+  + [Docker Compose](#dcompose)
   + [Docker Build](#dbuild)
 * [Using](#using)
 * [Notes](#notes)
@@ -132,6 +133,21 @@ respectively, but these could just as well be anywhere on your file system.
 * `-e CUPSPASSWORD`: the password for the CUPS admin user
 * `--device /dev/bus`: device mounted for interacting with USB printers
 * `--device /dev/usb`: device mounted for interacting with USB printers
+
+## <a name="dcompose"></a> [Docker Compose](#toc)
+If you don't want to type out these long **Docker** commands, you could
+optionally use [docker-compose](https://docs.docker.com/compose/) to set up your
+image. Just download the repo and run it like so:
+```
+$ git clone https://github.com/RagingTiger/docker-cups-airprint
+$ cd docker-cups-airprint
+$ docker-compose up
+```
+NOTE: This compose file is made with `USB` printers in mind and like the above
+commands has `device` mounts for `USB` printers. If you don't have a `USB`
+printer you may want to comment these out. Also the `config/services` data will
+be saved to the users `$HOME` directory. Again you may want to edit this to
+your own liking.
 
 ## <a name="dbuild"></a> [Docker Build](#toc)
 If you would like to build the image yourself (locally), pull down the repo and
