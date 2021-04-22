@@ -1,3 +1,4 @@
+# base image
 FROM ubuntu:xenial
 
 # Install the packages we need. Avahi will be included
