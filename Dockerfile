@@ -1,7 +1,12 @@
+# base image
 FROM ubuntu:20.04
 
 # setting non-interactive front end during installs
 ARG DEBIAN_FRONTEND=noninteractive
+
+# label with HEAD commit if given
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
 
 # Install the packages we need. Avahi will be included
 RUN apt-get update && apt-get install -y \
@@ -17,6 +22,7 @@ RUN apt-get update && apt-get install -y \
 	hpijs-ppds \
 	hp-ppd \
 	python3-cups \
+	cups-backend-bjnp \
 && rm -rf /var/lib/apt/lists/*
 
 # This will use port 631

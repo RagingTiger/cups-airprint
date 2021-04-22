@@ -6,6 +6,7 @@
   + [Docker Run](#drun)
   + [Docker Create](#dcreate)
     + [Parameters](#dparams)
+  + [Docker Compose](#dcompose)
   + [Docker Build](#dbuild)
 * [Using](#using)
 * [Notes](#notes)
@@ -133,6 +134,21 @@ respectively, but these could just as well be anywhere on your file system.
 * `--device /dev/bus`: device mounted for interacting with USB printers
 * `--device /dev/usb`: device mounted for interacting with USB printers
 
+## <a name="dcompose"></a> [Docker Compose](#toc)
+If you don't want to type out these long **Docker** commands, you could
+optionally use [docker-compose](https://docs.docker.com/compose/) to set up your
+image. Just download the repo and run it like so:
+```
+$ git clone https://github.com/RagingTiger/docker-cups-airprint
+$ cd docker-cups-airprint
+$ docker-compose up
+```
+NOTE: This compose file is made with `USB` printers in mind and like the above
+commands has `device` mounts for `USB` printers. If you don't have a `USB`
+printer you may want to comment these out. Also the `config/services` data will
+be saved to the users `$HOME` directory. Again you may want to edit this to
+your own liking.
+
 ## <a name="dbuild"></a> [Docker Build](#toc)
 If you would like to build the image yourself (locally), pull down the repo and
 run the `docker build` command as follows (NOTE: make sure to clone the repo
@@ -143,6 +159,9 @@ $ git clone --recurse-submodules https://github.com/RagingTiger/docker-cups-airp
 $ cd docker-cups-airprint
 $ docker build -t tigerj/cups-airprint .
 ```
+Follow this with a [docker run](#drun) or [docker create](dcreate) to deploy
+your container and your **cups-airprint** server is ready to be configured and
+[used](#using).
 
 ## <a name="using"></a> [Using](#toc)
 CUPS will be configurable at http://localhost:631 using the
