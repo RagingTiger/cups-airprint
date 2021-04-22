@@ -1,6 +1,10 @@
 # base image
 FROM ubuntu:xenial
 
+# label with HEAD commit if given
+ARG GIT_COMMIT=unspecified
+LABEL git_commit=$GIT_COMMIT
+
 # Install the packages we need. Avahi will be included
 RUN apt-get update && apt-get install -y \
 	cups \
