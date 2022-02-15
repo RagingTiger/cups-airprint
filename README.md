@@ -30,7 +30,7 @@ The local Avahi will be utilized for advertising the printers on the network.
 # <a name="multi-arch"></a> [Multi-arch Image](#toc)
 The below commands reference a
 [Docker Manifest List](https://docs.docker.com/engine/reference/commandline/manifest/)
-at [`tigerj/cups-airprint`](https://hub.docker.com/r/tigerj/cups-airprint)
+at [`ghcr.io/ragingtiger/cups-airprint:master`](https://github.com/ragingtiger/cups-airprint/pkgs/container/cups-airprint)
 built using Docker's
 [BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/).
 Simply running commands using this image will pull
@@ -44,8 +44,8 @@ image will not run.
 
 # <a name="start"></a> [Getting Started](#toc)
 This section will give an overview of the essential options/arguments to pass
-to docker to successfully run containers from the `tigerj/cups-airprint` docker
-image.
+to docker to successfully run containers from the `ghcr.io/ragingtiger/cups-airprint:master`
+docker image.
 
 ## <a name="drun"></a> [Docker Run](#toc)
 To simply do a quick and dirty run of the cups/airprint container:
@@ -59,7 +59,7 @@ $ docker run \
        --device /dev/usb \
        -e CUPSADMIN="admin" \
        -e CUPSPASSWORD="password" \
-       tigerj/cups-airprint
+       ghcr.io/ragingtiger/cups-airprint:master
 ```
 To stop the container simply run:
 ```
@@ -98,7 +98,7 @@ $ docker create \
        --device /dev/usb \
        -e CUPSADMIN="admin" \
        -e CUPSPASSWORD="password" \
-       tigerj/cups-airprint
+       ghcr.io/ragingtiger/cups-airprint:master
 ```
 Follow this with `docker start` and your cups/airprint printer is running:
 ```
