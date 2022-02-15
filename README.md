@@ -1,5 +1,6 @@
 # Archived
-No further updates to the repository will be made at this time. Please see the _forks_ for any possible solutions to your specific use case.
+No further updates to the repository will be made at this time. Please see the _forks_ for any possible solutions to your specific use case and/or the 
+author-suggested repo at: https://github.com/chuckcharlie/cups-avahi-airprint.
 
 # <a name="toc"></a> Table of Contents
 * [About](#about)
