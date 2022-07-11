@@ -51,7 +51,7 @@ docker image.
 ## <a name="drun"></a> [Docker Run](#toc)
 To simply do a quick and dirty run of the cups/airprint container:
 ```
-$ docker run \
+docker run \
        -d \
        --name=cups \
        --net=host \
@@ -64,11 +64,11 @@ $ docker run \
 ```
 To stop the container simply run:
 ```
-$ docker stop cups
+docker stop cups
 ```
 To remove the conainer simply run:
 ```
-$ docker rm cups
+docker rm cups
 ```
 **WARNING**: Be aware that deleting the container (i.e. `cups` in the example)
 will permanently delete the data that `docker volume` is storing for you.
@@ -88,7 +88,7 @@ will store the contents of these directories (located in the container) in
 ## <a name="dcreate"></a> [Docker Create](#toc)
 Creating a container is often more desirable than directly running it:
 ```
-$ docker create \
+docker create \
        --name=cups \
        --restart=always \
        --net=host \
@@ -103,15 +103,15 @@ $ docker create \
 ```
 Follow this with `docker start` and your cups/airprint printer is running:
 ```
-$ docker start cups
+docker start cups
 ```
 To stop the container simply run:
 ```
-$ docker stop cups
+docker stop cups
 ```
 To remove the conainer simply run:
 ```
-$ docker rm cups
+docker rm cups
 ```
 
 + **Notes**: As mentioned in the *Notes* subsection of the [Run](#run) section,
@@ -143,9 +143,9 @@ If you don't want to type out these long **Docker** commands, you could
 optionally use [docker-compose](https://docs.docker.com/compose/) to set up your
 image. Just download the repo and run it like so:
 ```
-$ git clone https://github.com/RagingTiger/docker-cups-airprint
-$ cd docker-cups-airprint
-$ docker-compose up
+git clone https://github.com/RagingTiger/docker-cups-airprint
+cd docker-cups-airprint
+docker-compose up
 ```
 NOTE: This compose file is made with `USB` printers in mind and like the above
 commands has `device` mounts for `USB` printers. If you don't have a `USB`
@@ -157,9 +157,9 @@ your own liking.
 If you would like to build the image yourself (locally), pull down the repo and
 run the `docker build` command as follows:
 ```
-$ git clone https://github.com/RagingTiger/docker-cups-airprint
-$ cd docker-cups-airprint
-$ docker build -t tigerj/cups-airprint .
+git clone https://github.com/RagingTiger/docker-cups-airprint
+cd docker-cups-airprint
+docker build -t tigerj/cups-airprint .
 ```
 Follow this with a [docker run](#drun) or [docker create](dcreate) to deploy
 your container and your **cups-airprint** server is ready to be configured and
